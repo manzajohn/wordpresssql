@@ -36,10 +36,6 @@ module "instance_sg" {
     {
       rule        = "ssh-tcp"
       cidr_blocks = "0.0.0.0/0"
-    },
-    {
-      rule        = "http-8080-tcp",
-      cidr_blocks = "0.0.0.0/0"
     }
   ]
   egress_with_cidr_blocks = [
