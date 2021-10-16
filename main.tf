@@ -38,7 +38,7 @@ module "instance_sg" {
       cidr_blocks = "0.0.0.0/0"
     },
     {
-      rule        = "http-8080-tcp",
+      rule        = "http-8000-tcp",
       cidr_blocks = "0.0.0.0/0"
     }
   ]
