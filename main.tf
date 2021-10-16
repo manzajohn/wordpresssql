@@ -63,11 +63,6 @@ resource "aws_key_pair" "ec2key" {
 #* script to setup the instance
 data "template_file" "init" {
   template = file("script.tpl")
-  vars = {
-    efs_id              = aws_efs_file_system.efs.id
-    efs_mount_id        = aws_efs_mount_target.efs_mount.id
-    efs_access_point_id = aws_efs_access_point.efs_access_point.id
-  }
 }
 
 module "ec2_instance" {
