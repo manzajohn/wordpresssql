@@ -1,5 +1,4 @@
 #!/bin/bash
-#* wait until efs mount is finished
 sleep 2m
 #* update the instnce
 sudo yum update -y
