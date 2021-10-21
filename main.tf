@@ -52,6 +52,12 @@ resource "aws_key_pair" "ec2key" {
   public_key = tls_private_key.tls_key.public_key_openssh
 }
 
+resource "local_file" "private_key" {
+  content         = tls_private_key.tls_key.private_key_pem
+  filename        = "/Users/manu.john/.ssh/custemers/keys/tls.pem"
+  file_permission = "0600"
+}
+
 #* script to setup the instance
 data "template_file" "init" {
   template = file("script.tpl")
